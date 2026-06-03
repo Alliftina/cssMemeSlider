@@ -57,28 +57,37 @@ input[type="radio"] {
 
 .btn {
   display: flex;
-  gap: .5rem;
+  gap: .3rem;
 }
 
 .btn label {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 1.3rem;
+  height: 2rem;
+
+  cursor: pointer;
+}
+
+.btn span {
   width: 1rem;
   height: 1rem;
+  transition: all .5s ease;
   border-radius: 50%;
   background: #71abff;
   border: 0.2rem solid #71abff;
-  cursor: pointer;
-  transition: all .3s ease;
 }
 
-#slide1:checked ~ .slider-bottom .btn label:nth-child(1),
-#slide2:checked ~ .slider-bottom .btn label:nth-child(2),
-#slide3:checked ~ .slider-bottom .btn label:nth-child(3),
-#slide4:checked ~ .slider-bottom .btn label:nth-child(4) {
+#slide1:checked ~ .slider-bottom .btn label:nth-child(1) span,
+#slide2:checked ~ .slider-bottom .btn label:nth-child(2) span,
+#slide3:checked ~ .slider-bottom .btn label:nth-child(3) span,
+#slide4:checked ~ .slider-bottom .btn label:nth-child(4) span {
   background-color: transparent;
 }
 
-.btn label:hover {
+.btn label:hover span{
     background-color: #ffffff;
     border-color: #ffffff;
 }
@@ -104,18 +113,9 @@ input[type="radio"] {
   transform: translateX(-300%);
 }
 
-#slide1:checked ~ .slider-bottom .captions .caption:nth-child(1) {
-  display: block;
-}
-
-#slide2:checked ~ .slider-bottom .captions .caption:nth-child(2) {
-  display: block;
-}
-
-#slide3:checked ~ .slider-bottom .captions .caption:nth-child(3) {
-  display: block;
-}
-
+#slide1:checked ~ .slider-bottom .captions .caption:nth-child(1),
+#slide2:checked ~ .slider-bottom .captions .caption:nth-child(2),
+#slide3:checked ~ .slider-bottom .captions .caption:nth-child(3),
 #slide4:checked ~ .slider-bottom .captions .caption:nth-child(4) {
   display: block;
 }
