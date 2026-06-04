@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: #26282a;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.slider {
+  max-width: 40rem;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+    border-radius: .5rem;}
+
+.slide {
+  min-width: 100%; 
+
+}
+
+.caption{
+    color: #ffffff;
+    font-weight: 400;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.slider-top{
+  overflow: hidden;
+}
+
+.slider-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.controls {
+  display: flex;
+  gap: .3rem;
+}
+
+.controls label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 1.3rem;
+  height: 2rem;
+
+  cursor: pointer;
+}
+
+.controls span {
+  width: 1rem;
+  height: 1rem;
+  transition: all .5s ease;
+  border-radius: 50%;
+  background: #71abff;
+  border: 0.2rem solid #71abff;
+}
+
+#slide1:checked ~ .slider-bottom .controls label:nth-child(1) span,
+#slide2:checked ~ .slider-bottom .controls label:nth-child(2) span,
+#slide3:checked ~ .slider-bottom .controls label:nth-child(3) span,
+#slide4:checked ~ .slider-bottom .controls label:nth-child(4) span {
+  background-color: transparent;
+}
+
+.controls label:hover span,
+.controls label:active span {
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+.caption {
+  display: none;
+  color: #fff;
+}
+
+#slide1:checked ~ .slider-top .slides {
+  transform: translateX(0);
+}
+
+#slide2:checked ~ .slider-top .slides {
+  transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slider-top .slides {
+  transform: translateX(-200%);
+}
+
+#slide4:checked ~ .slider-top .slides {
+  transform: translateX(-300%);
+}
+
+#slide1:checked ~ .slider-bottom .captions .caption:nth-child(1),
+#slide2:checked ~ .slider-bottom .captions .caption:nth-child(2),
+#slide3:checked ~ .slider-bottom .captions .caption:nth-child(3),
+#slide4:checked ~ .slider-bottom .captions .caption:nth-child(4) {
+  display: block;
+}
+
+
+@media screen and (max-width: 600px) {
+    .slider-bottom{
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+    .captions {
+    width: 100%;
+  }
+}
