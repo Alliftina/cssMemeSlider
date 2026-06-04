@@ -10,10 +10,9 @@ body{
 }
 
 .container{
-   display: flex;
+  display: flex;
   justify-content: center;
-  min-height: 100vh;
-  margin-top: 2rem;
+  padding: 2rem 1rem;
 }
 
 .slider {
@@ -118,4 +117,15 @@ input[type="radio"] {
 #slide3:checked ~ .slider-bottom .captions .caption:nth-child(3),
 #slide4:checked ~ .slider-bottom .captions .caption:nth-child(4) {
   display: block;
+}
+
+
+@media screen and (max-width: 600px) {
+    .slider-bottom{
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+    .captions {
+    width: 100%;
+  }
 }
