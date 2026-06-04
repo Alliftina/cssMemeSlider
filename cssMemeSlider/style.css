@@ -54,12 +54,12 @@ input[type="radio"] {
   margin-top: 1.5rem;
 }
 
-.btn {
+.controls {
   display: flex;
   gap: .3rem;
 }
 
-.btn label {
+.controls label {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,7 +70,7 @@ input[type="radio"] {
   cursor: pointer;
 }
 
-.btn span {
+.controls span {
   width: 1rem;
   height: 1rem;
   transition: all .5s ease;
@@ -79,14 +79,15 @@ input[type="radio"] {
   border: 0.2rem solid #71abff;
 }
 
-#slide1:checked ~ .slider-bottom .btn label:nth-child(1) span,
-#slide2:checked ~ .slider-bottom .btn label:nth-child(2) span,
-#slide3:checked ~ .slider-bottom .btn label:nth-child(3) span,
-#slide4:checked ~ .slider-bottom .btn label:nth-child(4) span {
+#slide1:checked ~ .slider-bottom .controls label:nth-child(1) span,
+#slide2:checked ~ .slider-bottom .controls label:nth-child(2) span,
+#slide3:checked ~ .slider-bottom .controls label:nth-child(3) span,
+#slide4:checked ~ .slider-bottom .controls label:nth-child(4) span {
   background-color: transparent;
 }
 
-.btn label:hover span{
+.controls label:hover span,
+.controls label:active span {
     background-color: #ffffff;
     border-color: #ffffff;
 }
